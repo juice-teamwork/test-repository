@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel;
 public class GalleryViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
-    private MutableLiveData<Integer> Num;
+    private MutableLiveData<Integer> num;
 
     public GalleryViewModel() {
         mText = new MutableLiveData<>();
@@ -23,14 +23,14 @@ public class GalleryViewModel extends ViewModel {
     }
 
     public MutableLiveData<Integer> getNum() {
-        if (Num == null) {
-            Num = new MutableLiveData<>();
-            Num.setValue(0);
+        if (num == null) {
+            num = new MutableLiveData<>();
+            num.setValue(0);
         }
-        return Num;
+        return num;
     }
 
     public void addNum() {
-        Num.setValue(Num.getValue() + 1);
+        num.setValue(num.getValue() + 1);
     }
 }

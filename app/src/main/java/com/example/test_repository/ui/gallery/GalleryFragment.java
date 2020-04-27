@@ -22,10 +22,11 @@ public class GalleryFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel =
                 new ViewModelProvider(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        binding = DataBindingUtil.setContentView(requireActivity(), R.layout.fragment_gallery);
+        //View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_gallery, container, false);
+        //binding = DataBindingUtil.setContentView(requireActivity(), R.layout.fragment_gallery);
         binding.setData(galleryViewModel);
         binding.setLifecycleOwner(this);
-        return root;
+        return binding.getRoot();
     }
 }
