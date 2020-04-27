@@ -14,4 +14,6 @@
     <string name="home_second">Home Second</string>
     <string name="ADD">1</string>
     <string name="add">加一</string>
+    <string name="textview1">textview</string>
+    <string name="button">Button</string>
 </resources>
