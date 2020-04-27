@@ -5,15 +5,17 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class SlideshowViewModel extends ViewModel {
+    public MutableLiveData<Integer> num;
 
-    private MutableLiveData<String> mText;
-
-    public SlideshowViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+    public MutableLiveData<Integer> getNum() {
+        if (num == null) {
+            num = new MutableLiveData<>();
+            num.setValue(0);
+        }
+        return num;
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void add() {
+        num.setValue(num.getValue() + 1);
     }
 }
