@@ -6,6 +6,18 @@ import androidx.lifecycle.ViewModel;
 
 public class HomeViewModel extends ViewModel {
 
+    private MutableLiveData<Integer> num;
+
+    public MutableLiveData<Integer> getNum() {
+        if(num==null){
+            num=new MutableLiveData<>();
+            num.setValue(0);
+        }
+        return num;
+    }
+    public void add(){
+        num.setValue(num.getValue()+1);
+    }
     private MutableLiveData<String> mText;
 
     public HomeViewModel() {
